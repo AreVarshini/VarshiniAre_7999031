@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="font-family: Arial; background-color: #f5f5f5; margin: 20px;">
+
+    <!-- Navigation -->
+    <nav style="background-color: #333; padding: 10px;">
+        <a href="#home" style="color: white; margin-right: 20px;">Home</a>
+        <a href="#events" style="color: white; margin-right: 20px;">Events</a>
+        <a href="#contact" style="color: white; margin-right: 20px;">Contact</a>
+        <a href="help.html" target="_blank" style="color: white;">Help</a>
+    </nav>
+
+    <!-- Welcome Banner -->
+    <div id="welcomeBanner"
+         style="background-color: lightblue; padding: 15px; margin-top: 15px; border-radius: 5px;">
+
+        <h1 style="color: darkblue;">
+            Welcome to Community Event Portal
+        </h1>
+
+        <p>
+            Enjoy our
+            <span style="color: red; font-weight: bold;">
+                Special Summer Offer!
+            </span>
+        </p>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Home</h2>
+<p class="highlight"
+style="font-weight: bold; color: darkblue;">
+    Find and register for exciting local events.
+</p>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+        <h2>Community Event Gallery</h2>
+
+        <table border="1" style="margin-top: 20px;">
+            <tr>
+                <td style="padding: 10px; text-align: center;">
+                    <img src="music festival.webp"
+                         alt="Music Event"
+                         title="Music Event"
+                         ondblclick="enlargeImage(this)"
+                         style="width: 200px; height: 150px; border: 3px solid black;">
+                    <p>Music Festival</p>
+                </td>
+
+                <td style="padding: 10px; text-align: center;">
+                    <img src="sports festival.webp"
+                         alt="Sports Event"
+                         title="Sports Event"
+                         ondblclick="enlargeImage(this)"
+                         style="width: 200px; height: 150px; border: 3px solid black;">
+                    <p>Sports Meet</p>
+                </td>
+
+                <td style="padding: 10px; text-align: center;">
+                    <img src="workshop image.jfif"
+                         alt="Workshop"
+                         title="Workshop"
+                         ondblclick="enlargeImage(this)"
+                         style="width: 200px; height: 150px; border: 3px solid black;">
+                    <p>Workshop</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding: 10px; text-align: center;">
+                    <img src="dance image.avif"
+                         alt="Dance Event"
+                         title="Dance Event"
+                         ondblclick="enlargeImage(this)"
+                         style="width: 200px; height: 150px; border: 3px solid black;">
+                    <p>Dance Show</p>
+                </td>
+
+                <td style="padding: 10px; text-align: center;">
+                    <img src="Food festival.jpg"
+                         alt="Food Festival"
+                         title="Food Festival"
+                         ondblclick="enlargeImage(this)"
+                         style="width: 200px; height: 150px; border: 3px solid black;">
+                    <p>Food Festival</p>
+                </td>
+
+                <td style="padding: 10px; text-align: center;">
+                    <img src="Art Exhibition image.jpeg"
+                         alt="Art Event"
+                         title="Art Event"
+                         ondblclick="enlargeImage(this)"
+                         style="width: 200px; height: 150px; border: 3px solid black;">
+                    <p>Art Exhibition</p>
+                </td>
+            </tr>
+        </table>
+        <div id="eventList"></div>
+    </section>
+
+    <!-- Registration Form -->
+     <section>
+
+<h2>Event Registration Form</h2>
+
+<form id="eventForm"
+onsubmit="return validateForm()"
+style="background-color:white;
+padding:20px;
+width:400px;
+border-radius:5px;">
+
+
+<label>Name:</label><br>
+
+<input type="text"
+required
+autofocus
+placeholder="Enter your name"
+style="width:100%;padding:8px;">
+
+<br><br>
+
+
+<label>Email:</label><br>
+
+<input type="email"
+required
+placeholder="Enter your email"
+style="width:100%;padding:8px;">
+
+<br><br>
+
+
+<label>Phone Number:</label><br>
+
+<input type="text"
+       id="phone"
+       required
+       placeholder="Enter phone number"
+       onblur="validatePhone()"
+       style="width:100%;padding:8px;">
+
+
+<p id="phoneMsg"></p>
+
+
+<label>Date:</label><br>
+
+<input type="date"
+required
+style="width:100%;padding:8px;">
+
+<br><br>
+
+
+<label>Event Type:</label><br>
+
+<select id="eventType"
+onchange="showFee(this.value)"
+required
+style="width:100%;padding:8px;">
+
+<option value="">Select Event</option>
+<option value="100">Music</option>
+<option value="200">Sports</option>
+<option value="150">Workshop</option>
+<option value="150">Dance Show</option>
+<option value="100">Food Festival</option>
+<option value="150">Art Exhibition</option>
+
+</select>
+
+<p id="fee"></p>
+
+
+<label>Feedback:</label><br>
+
+<textarea id="feedback"
+rows="4"
+oninput="countCharacters()"
+style="width:100%;"></textarea>
+
+<p>
+Characters:
+<span id="count">0</span>
+<h3>User Preferences</h3>
+
+<button type="button"
+        onclick="savePreference()">
+Save Preference
+</button>
+
+<button type="button"
+        onclick="clearPreference()">
+Clear Preferences
+</button>
+
+<br><br>
+</p>
+
+
+<button type="submit"
+style="padding:10px;
+background-color:green;
+color:white;
+border:none;">
+Submit
+
+</button>
+
+<output id="message"></output>
+
+</form>
+
+</section>
+
+
+<!-- Video -->
+
+<section>
+
+<h2>Event Promo Video</h2>
+
+<video width="400"
+controls
+oncanplay="videoReady()">
+
+<source src="untitled_v1 (720p).mp4"
+type="video/mp4">
+
+</video>
+</section>
+<section>
+<h2>Find Nearby Events</h2>
+
+<button onclick="findLocation()">
+Find Nearby Events
+</button>
+</section>
+
+<p id="location"></p>
+
+
+<!-- Contact -->
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<p>Email: community@events.com</p>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer style="margin-top:20px;
+background-color:#333;
+color:white;
+padding:10px;">
+
+<p>&copy; 2026 Local Community Event Portal</p>
+
+</footer>
+<script>
+
+function validatePhone()
+{
+    let phone = document.getElementById("phone").value;
+
+    let pattern = /^[0-9]{10}$/;
+
+    if(pattern.test(phone))
+    {
+        document.getElementById("phoneMsg").innerText =
+        "Valid Number";
+    }
+    else
+    {
+        document.getElementById("phoneMsg").innerText =
+        "Enter a valid 10-digit number";
+    }
+}
+
+
+function showFee(fee)
+{
+document.getElementById("fee").innerText=
+"Event Fee : ₹"+fee;
+}
+
+
+function countCharacters()
+{
+let text=document.getElementById("feedback").value;
+
+document.getElementById("count").innerText=
+text.length;
+}
+
+
+function enlargeImage(img)
+{
+img.style.width="300px";
+img.style.height="200px";
+}
+
+
+function validateForm()
+{
+let form=document.getElementById("eventForm");
+
+if(form.checkValidity())
+{
+document.getElementById("message").innerText=
+"Registration Successful!";
+
+return false;
+}
+
+return true;
+}
+
+
+function savePreference()
+{
+    let event=
+    document.getElementById("eventType").value;
+
+    localStorage.setItem(
+    "preferredEvent",
+    event
+    );
+
+    sessionStorage.setItem(
+    "currentEvent",
+    event
+    );
+
+    alert("Preference Saved");
+}
+
+
+function clearPreference()
+{
+    localStorage.clear();
+
+    sessionStorage.clear();
+
+    document.getElementById("eventType").value="";
+
+    alert("Preferences Cleared");
+}
+function videoReady()
+{
+    alert("Video ready to play");
+}
+function findLocation()
+{
+navigator.geolocation.getCurrentPosition(
+
+function(position)
+{
+document.getElementById("location").innerText=
+"Latitude: "+position.coords.latitude+
+" Longitude: "+position.coords.longitude;
+},
+
+function()
+{
+alert("Location access denied");
+},
+
+{
+enableHighAccuracy:true,
+timeout:5000
+}
+
+);
+}
+window.onbeforeunload = function()
+{
+    return "Are you sure you want to leave?";
+};
+
+</script>
+<script src="script.js"></script>
+</body>
+</html>

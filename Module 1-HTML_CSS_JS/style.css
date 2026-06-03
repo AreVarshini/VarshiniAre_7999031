@@ -1,0 +1,240 @@
+/* =========================
+   Global Styles
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background-color:#f5f5f5;
+    background-image:linear-gradient(to right,#f5f5f5,#dbefff);
+    margin:20px;
+    line-height:1.6;
+}
+
+
+/* =========================
+   Navigation Bar
+========================= */
+
+nav{
+    background-color:#333;
+    padding:15px;
+    border-radius:5px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-right:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+
+/* =========================
+   Welcome Banner
+========================= */
+
+#welcomeBanner{
+    background:linear-gradient(to right,lightblue,skyblue);
+    padding:20px;
+    margin-top:15px;
+    border-radius:10px;
+    text-align:center;
+}
+
+#welcomeBanner h1{
+    color:darkblue;
+    letter-spacing:1px;
+}
+
+#welcomeBanner span{
+    color:red;
+    font-weight:bold;
+}
+
+
+/* =========================
+   Sections
+========================= */
+
+section{
+    margin-top:30px;
+    padding:20px;
+    background-color:white;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    margin-bottom:15px;
+    color:#003366;
+    text-transform:uppercase;
+}
+
+
+/* =========================
+   Table Styling
+========================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+td{
+    padding:15px;
+    text-align:center;
+}
+
+tr:nth-child(even){
+    background-color:#f2f2f2;
+}
+
+
+/* =========================
+   Images
+========================= */
+
+img{
+    width:200px;
+    height:150px;
+    border:3px solid black;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+img:hover{
+    transform:scale(1.05);
+    border-color:blue;
+}
+
+
+/* =========================
+   Form Styling
+========================= */
+
+form{
+    background-color:white;
+    padding:20px;
+    width:400px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+label{
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+    border:1px solid gray;
+    border-radius:5px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:2px solid blue;
+}
+
+
+/* =========================
+   Buttons
+========================= */
+
+button{
+    padding:10px 15px;
+    background-color:green;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-right:10px;
+}
+
+button:hover{
+    background-color:darkgreen;
+}
+
+
+/* =========================
+   Video Section
+========================= */
+
+video{
+    border-radius:10px;
+    border:3px solid #333;
+}
+
+
+/* =========================
+   Contact Section
+========================= */
+
+#contact p{
+    font-size:18px;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+footer{
+    margin-top:20px;
+    background-color:#333;
+    color:white;
+    text-align:center;
+    padding:15px;
+    border-radius:5px;
+}
+
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media screen and (max-width:768px){
+
+    nav a{
+        display:block;
+        margin:10px 0;
+    }
+
+    form{
+        width:100%;
+    }
+
+    img{
+        width:100%;
+        height:auto;
+    }
+
+    video{
+        width:100%;
+    }
+
+    h1{
+        font-size:24px;
+    }
+
+    h2{
+        font-size:20px;
+    }
+}
